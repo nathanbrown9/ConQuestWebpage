@@ -1331,7 +1331,7 @@ nav.nav-scrolled .menu-container .bars span {
   .gallery-subtitle {
     color: var(--clr-primary);
     font-family: 'ParagraphFont', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.2rem !important;
     font-weight: 600;
     letter-spacing: 0.08em;
     text-align: center;
@@ -1343,6 +1343,8 @@ nav.nav-scrolled .menu-container .bars span {
   .gallery-title {
    
     transform: translateX(-1vw) scaleY(3);
+    font-size: 1.7rem;
+
     
   }
 
@@ -1386,7 +1388,7 @@ nav.nav-scrolled .menu-container .bars span {
   }
 }
 
-@media (max-width: 1024px){
+@media (min-width: 769px) and (max-width: 1024px){
 .gallery-subtitle {
     color: var(--clr-primary);
     font-family: 'ParagraphFont', sans-serif;
@@ -1402,6 +1404,7 @@ nav.nav-scrolled .menu-container .bars span {
   .gallery-title {
    
     transform: translateX(-1vw) scaleY(2);
+    font-size: 3.5rem ;
     
   }
 
