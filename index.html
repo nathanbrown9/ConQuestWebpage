@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ConQuest Media</title>
+    <link rel="icon" type="image/png" href="KramoBone_white.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/1c6e1d8f57.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+   <div id="loader-wrapper">
+    <div id="loader"></div>
+
+    <img src="KramoBone_white.png" alt="Logo" class="loader-logo" />
+
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+  </div>
+
+
+    <section class="header">
+      <!-- Background Video -->
+      <video autoplay muted loop playsinline class="bg-video">
+        <source src="Take1.mov" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        class="bg-video-mobile"
+        style="display: none"
+      >
+        <source src="MobileTake1.Mov" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      <div class="hometext">
+        <nav>
+          <!-- Site Title -->
+          <div class="navbar-title">
+            <h1><a href="index.html">ConQuest</a></h1>
+          </div>
+
+          <!-- Nav Animation Overlays -->
+          <div class="nav-animation-wrapper" id="navWrapper">
+            <div class="nav-color-overlay primary-overlay"></div>
+            <div class="nav-color-overlay secondary-overlay"></div>
+
+            <!-- Nav Menu -->
+            <div class="nav-links" id="navLinks">
+              <ul>
+                <li><a href="#music-section">Music</a></li>
+                <li><a href="#gallery-section">Gallery</a></li>
+                <li><a href="#socials-section">Socials</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Animated Hamburger Menu Button -->
+          <div class="menu-container" id="menuButton">
+            <div class="bars">
+              <span></span>
+              <span></span>
+              <span></span>
+              <div class="other-bar"></div>
+            </div>
+          </div>
+        
+      </div>
+    </section>
+    <!-- <div class="music-placeholder"></div>
+    <div class="musicmobile-placeholder"></div> -->
+
+    <div class="container">
+      <section id="music-section" class="music-section">
+      <div class="music-names-column">
+        <div class="music-name name-jon">JON</div>
+        <div class="music-name name-dame">DAME</div>
+        <div class="music-name name-kylo">KYLO</div>
+      </div>
+      <p class="music-names-desc">
+        These are not just names. This is the chemical structure of CQ. Let us
+        show you what happens when these structures come together...brace
+        yourself.
+      </p>
+      <div class="music-subtitle-wrapper">
+        <h2 class="music-subtitle">The Music.</h2>
+        <div class="music-divider"></div>
+        <!-- <div class="scroll-instructions">
+          Enter the container to scroll through.
+        </div> -->
+      </div>
+    </section>
+
+    </div>
+    <!-- ✅ NEW VIDEO CARD SECTION -->
+
+    <div class="container">
+      <section class="music-video-section checkerboard-section">
+      <div class="checkerboard-grid">
+        <!-- Row 1 -->
+        <div class="checker-row">
+          <div class="checker-cell video-cell">
+            <div class="music-video-card card-1">
+              <div class="video-wrapper">
+                <video class="music-card-video" autoplay muted loop playsinline>
+                  <source
+                    src="Take2.MOV"
+                    type="video/mp4"
+                    media="(min-width: 1024px)"
+                  />
+                  <source
+                    src="MobileTake2.Mov"
+                    type="video/mp4"
+                    media="(max-width: 1023px)"
+                  />
+                </video>
+                <div class="video-overlay">
+                  <p class="overlay-text">Ready to hear magic?</p>
+                  <div class="overlay-icons">
+                    <i class="fas fa-volume-up volume-icon"></i>
+                    <i class="fas fa-expand fullscreen-icon"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="checker-cell word-cell">
+            <span class="checker-word">Can't</span>
+          </div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="checker-row">
+          <div class="checker-cell word-cell">
+            <span class="checker-word">Stop</span>
+          </div>
+          <div class="checker-cell video-cell">
+            <div class="music-video-card card-2">
+              <div class="video-wrapper">
+                <video class="music-card-video" autoplay muted loop playsinline>
+                  <source
+                    src="Sols3(shortened).MOV"
+                    type="video/mp4"
+                    media="(min-width: 1024px)"
+                  />
+                  <source
+                    src="MobileTimeout.MOV"
+                    type="video/mp4"
+                    media="(max-width: 1023px)"
+                  />
+                </video>
+                <div class="video-overlay">
+                  <p class="overlay-text">Ready to hear magic?</p>
+                  <div class="overlay-icons">
+                    <i class="fas fa-volume-up volume-icon"></i>
+                    <i class="fas fa-expand fullscreen-icon"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 3 -->
+        <div class="checker-row">
+          <div class="checker-cell video-cell">
+            <div class="music-video-card card-3">
+              <div class="video-wrapper">
+                <video class="music-card-video" autoplay muted loop playsinline>
+                  <source
+                    src="Take3_compressed.mov"
+                    type="video/mp4"
+                    media="(min-width: 1024px)"
+                  />
+                  <source
+                    src="MobileTake3.MOV"
+                    type="video/mp4"
+                    media="(max-width: 1023px)"
+                  />
+                </video>
+                <div class="video-overlay">
+                  <p class="overlay-text">Ready to hear magic?</p>
+                  <div class="overlay-icons">
+                    <i class="fas fa-volume-up volume-icon"></i>
+                    <i class="fas fa-expand fullscreen-icon"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="checker-cell word-cell">
+            <span class="checker-word">The Motion.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    </div>
+    <!-- ALBUMS SECTION -->
+    <div class="container">
+      <section class="albums-section">
+      <div class="albums-wrapper">
+        <h2 class="albums-subtitle">Want More?</h2>
+        <div class="album-cover-container">
+          <img src="PrimaryCover.jpg" alt="Album Cover" class="album-cover" />
+        </div>
+        <div class="album-songs-scroll">
+          <div class="album-song" data-src="songs/BrownManorFreestyle_snippet.mp3">
+            <span class="song-title">The Brown Manor Freestyle</span>
+            <div class="audio-player">
+              <div class="progress-circle">
+                <i class="fas fa-play play-icon"></i>
+              </div>
+            </div>
+          </div>
+          <div class="album-song" data-src="songs/SummerSols_snippet.mp3">
+            <span class="song-title">Summer Sols</span>
+            <div class="audio-player">
+              <div class="progress-circle">
+                <i class="fas fa-play play-icon"></i>
+              </div>
+            </div>
+          </div>
+          <div class="album-song" data-src="songs/TNT_snippet.mp3">
+            <span class="song-title">TNT</span>
+            <div class="audio-player">
+              <div class="progress-circle">
+                <i class="fas fa-play play-icon"></i>
+              </div>
+            </div>
+          </div>
+          <div class="album-song" data-src="songs/Timeout_snippet.mp3">
+            <span class="song-title">Timeout</span>
+            <div class="audio-player">
+              <div class="progress-circle">
+                <i class="fas fa-play play-icon"></i>
+              </div>
+            </div>
+          </div>
+          <div class="album-song" data-src="songs/06JOC_snippet.mp3">
+            <span class="song-title">06 Joc</span>
+            <div class="audio-player">
+              <div class="progress-circle">
+                <i class="fas fa-play play-icon"></i>
+              </div>
+            </div>
+          </div>
+          <div class="album-song" data-src="songs/getem_snippet.mp3">
+            <span class="song-title">Get Em'</span>
+            <div class="audio-player">
+              <div class="progress-circle">
+                <i class="fas fa-play play-icon"></i>
+              </div>
+            </div>
+          </div>
+          <div class="album-song" data-src="songs/packthewhip_snippet.mp3">
+            <span class="song-title">Pack The Whip</span>
+            <div class="audio-player">
+              <div class="progress-circle">
+                <i class="fas fa-play play-icon"></i>
+              </div>
+            </div>
+          </div>
+          <div class="album-song" data-src="songs/Douu_snippet.mp3">
+            <span class="song-title">Douu</span>
+            <div class="audio-player">
+              <div class="progress-circle">
+                <i class="fas fa-play play-icon"></i>
+              </div>
+            </div>
+          </div>
+          <div class="album-song" data-src="songs/firsttaketype_snippet.mp3">
+            <span class="song-title">First Take Type</span>
+            <div class="audio-player">
+              <div class="progress-circle">
+                <i class="fas fa-play play-icon"></i>
+              </div>
+            </div>
+          </div>
+          <div class="album-song" data-src="songs/Purolator_snippet.mp3">
+            <span class="song-title">Purolator</span>
+            <div class="audio-player">
+              <div class="progress-circle">
+                <i class="fas fa-play play-icon"></i>
+              </div>
+            </div>
+          </div>
+          <div class="album-song" data-src="songs/adream_snippet.mp3">
+            <span class="song-title">A Dream</span>
+            <div class="audio-player">
+              <div class="progress-circle">
+                <i class="fas fa-play play-icon"></i>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="album-song" data-src="songs/track-3-bonus.mp3">
+            <span class="song-title">Track 3 - Bonus</span>
+            <div class="audio-player">
+              <div class="progress-circle">
+                <i class="fas fa-play play-icon"></i>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </section>
+
+    </div>
+    <!-- GALLERY SECTION -->
+    <div class="container">
+      <section class="gallery-section" id="gallery-section">
+      <div class="gallery-wrapper">
+        <h3 class="gallery-subtitle fade-in-up">The Gallery.</h3>
+        <h1 class="gallery-title" id="galleryTitle"></h1>
+      </div>
+      <div class="cqvideo">
+        <video
+          src="gallery/CQ_Animation.mov"
+          class="gallery-animation-video"
+          autoplay
+          muted
+          loop
+          playsinline
+        ></video>
+      </div>
+      <div class="gallery-images-scatter">
+        <img
+          src="gallery/SecondaryCover.jpg"
+          class="gallery-scatter-img"
+          alt="Gallery Image 1"
+        />
+        <img
+          src="gallery/RBCQ_BG.jpg"
+          class="gallery-scatter-img"
+          alt="Gallery Image 2"
+        />
+        <img
+          src="gallery/KBOTW.jpg"
+          class="gallery-scatter-img"
+          alt="Gallery Image 3"
+        />
+        <img
+          src="gallery/IcarusCQ.jpg"
+          class="gallery-scatter-img"
+          alt="Gallery Image 4"
+        />
+        <!-- <img
+          src="gallery/img5.jpg"
+          class="gallery-scatter-img"
+          alt="Gallery Image 5"
+        /> -->
+      </div>
+    </section>
+
+    </div>
+    <!-- SOCIALS SECTION -->
+    <div class="container">
+      <section class="socials-section" id="socials-section">
+      <h2 class="socials-title">Socials</h2>
+      <div class="socials-icons-row">
+        <a class="socials-icon-circle stagger-1" href="https://too.fm/d1r66kz?fbclid=PAZXh0bgNhZW0CMTEAAadngUga7BedpQOibYLPiEOt0o8LHgEgLIzp0SHoKpwblwEuz2QM7zPCE-ZgPg_aem_QxdVAU4Efdhnwkj8RdOERA" target="_blank" title="Music" tabindex="0">
+          <i class="fa-solid fa-music"></i>
+        </a>
+        <a class="socials-icon-circle stagger-2" href="https://www.instagram.com/conquxst/?igsh=cHdieHdxbDB1dXI2" target="_blank" rel="noopener" title="Instagram" tabindex="0">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a class="socials-icon-circle stagger-3" href="https://www.tiktok.com/@kylogenesis.cq?_t=ZP-8yPUtTWZJaI&_r=1" target="_blank" rel="noopener" title="TikTok" tabindex="0">
+          <i class="fa-brands fa-tiktok"></i>
+        </a>
+      </div>
+    </section>
+
+    </div>
+    <div class="container">
+      <footer class="cq-footer">
+      <div class="footer-center">
+        <button class="footer-logo-wrapper" id="footerTopBtn" aria-label="Back to top">
+          <img src="KramoBone_white.png" alt="Back to Top" class="footer-logo" />
+          <span class="slide-text">Top</span>
+        </button>
+      </div>
+      <div class="footer-bottom-left">
+        &copy; 2025 ConQuest Media. All Rights Reserved.
+      </div>
+      <div class="footer-bottom-right">
+        Made by <a href="mailto:avazotechsolutions@outlook.com" class="footer-avazo-link">Avazo Tech Solutions</a>.
+      </div>
+    </footer>
+    </div>
+   
+
+    <script src="web.js"></script>
+  </body>
+</html>
