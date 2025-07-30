@@ -31,7 +31,7 @@ body {
 /* Main content container for max-width control */
 .container {
   width: 100%;
-  max-width: 1900px;
+/*  max-width: 1900px */
   margin-left: 0;
   margin-right: 0;
   box-sizing: border-box;
