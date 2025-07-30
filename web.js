@@ -324,6 +324,25 @@ wrappers.forEach(wrapper => {
       }
     });
   });
+
+//------------------- Show overlay text on video tap/click in music-video-section ----------------------------
+document.querySelectorAll('.music-video-section .music-card-video').forEach(function(video) {
+  var overlay = video.closest('.video-wrapper').querySelector('.video-overlay');
+  if (!overlay) return;
+  video.addEventListener('click', function(e) {
+    overlay.style.opacity = '1';
+    overlay.style.pointerEvents = 'all';
+  });
+  video.addEventListener('touchstart', function(e) {
+    overlay.style.opacity = '1';
+    overlay.style.pointerEvents = 'all';
+  });
+  // Optional: hide overlay when clicking outside or after a timeout
+  overlay.addEventListener('click', function(e) {
+    overlay.style.opacity = '0';
+    overlay.style.pointerEvents = 'none';
+  });
+});
   
   //-----------------Transition to Album Section---------------------
   const subtitle = document.querySelector('.albums-subtitle');
