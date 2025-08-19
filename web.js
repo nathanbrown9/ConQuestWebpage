@@ -154,6 +154,13 @@ document.querySelectorAll(".nav-links li a").forEach((link) => {
 
     const isOpen = menuBtn.classList.contains("is-menu-open");
 
+    // compute smooth scroll target accounting for fixed nav height
+    const navEl = document.querySelector("nav");
+    const headerOffset = navEl ? navEl.offsetHeight : 0;
+    const targetY =
+      targetElement.getBoundingClientRect().top + window.pageYOffset;
+    const finalScroll = Math.max(0, targetY - headerOffset - 8);
+
     if (isOpen) {
       // Close menu
       menuBtn.classList.remove("is-menu-open");
@@ -163,14 +170,43 @@ document.querySelectorAll(".nav-links li a").forEach((link) => {
         navWrapper.classList.remove("show");
         body.classList.remove("no-scroll");
 
-        // After menu closes, scroll to target smoothly
-        targetElement.scrollIntoView({ behavior: "smooth" });
-      }, 400); // Match menu close duration
+        // After menu closes, scroll to the computed position smoothly
+        window.scrollTo({ top: finalScroll, behavior: "smooth" });
+      }, 420); // slight buffer to let close animation finish
     } else {
       // If menu isn't open (e.g. desktop), scroll immediately
-      targetElement.scrollIntoView({ behavior: "smooth" });
+      window.scrollTo({ top: finalScroll, behavior: "smooth" });
     }
   });
+});
+
+// Dismiss any visible video overlays when tapping/clicking outside video areas
+function dismissVideoOverlays(e) {
+  // Ignore clicks inside video wrappers or the nav/menu
+  if (
+    e.target.closest &&
+    (e.target.closest(".video-wrapper") ||
+      e.target.closest(".nav-links") ||
+      e.target.closest("#menuButton"))
+  )
+    return;
+
+  document.querySelectorAll(".video-overlay").forEach((overlay) => {
+    const isVisible =
+      overlay.style.opacity === "1" ||
+      parseFloat(getComputedStyle(overlay).opacity) > 0;
+    if (isVisible) {
+      overlay.style.opacity = "0";
+      overlay.style.pointerEvents = "none";
+      const wrapper = overlay.closest(".video-wrapper");
+      if (wrapper) wrapper.classList.remove("no-blur");
+    }
+  });
+}
+
+document.addEventListener("click", dismissVideoOverlays, { passive: true });
+document.addEventListener("touchstart", dismissVideoOverlays, {
+  passive: true,
 });
 
 //------------------Music Video Hover Functionality-----------------------
