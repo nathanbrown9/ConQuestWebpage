@@ -31,7 +31,7 @@ body {
 /* Main content container for max-width control */
 .container {
   width: 100%;
-/*  max-width: 1900px */
+  /* max-width: 3000px; */
   margin-left: 0;
   margin-right: 0;
   box-sizing: border-box;
@@ -250,12 +250,15 @@ nav {
   z-index: 3000;
   background: transparent;
   transition: background 0.3s, backdrop-filter 0.3s;
+  -webkit-backdrop-filter: none;
   backdrop-filter: none;
 }
 
 nav.nav-blur {
   background: rgba(20, 20, 20, 0.6);
+  -webkit-backdrop-filter: none;
   backdrop-filter: blur(12px);
+
   box-shadow: 0 2px 16px 0 rgba(0,0,0,0.12);
 }
 
@@ -1148,6 +1151,7 @@ nav.nav-scrolled .menu-container .bars span {
     border: 2px solid white;
     border-radius: 60%;
     font-size: 5rem;
+    font-weight: 900;
     margin: 5.5rem 1rem 11.5rem;
   }
 
