@@ -350,10 +350,11 @@ wrappers.forEach((wrapper) => {
   const volumeIcon = wrapper.querySelector(".volume-icon");
   const fullscreenIcon = wrapper.querySelector(".fullscreen-icon");
   const overlayText = wrapper.querySelector(".overlay-text");
+  const overlay = wrapper.querySelector(".video-overlay");
 
   // Volume toggle with mute others
   volumeIcon.addEventListener("click", () => {
-    const isNowUnmuted = video.muted;
+    const wasMuted = video.muted;
 
     // Mute all other videos
     wrappers.forEach((otherWrapper) => {
@@ -361,21 +362,39 @@ wrappers.forEach((wrapper) => {
       const otherIcon = otherWrapper.querySelector(".volume-icon");
       const otherText = otherWrapper.querySelector(".overlay-text");
 
-      otherVideo.muted = true;
-      otherIcon.classList.remove("fa-volume-mute");
-      otherIcon.classList.add("fa-volume-up");
-      otherText.textContent = "Ready to hear magic?";
+      if (otherVideo && otherVideo !== video) {
+        otherVideo.muted = true;
+        if (otherIcon) {
+          otherIcon.classList.remove("fa-volume-mute");
+          otherIcon.classList.add("fa-volume-up");
+        }
+        if (otherText) otherText.textContent = "Ready to hear magic?";
+      }
     });
 
     // Toggle this video to opposite state (mute → unmute)
-    video.muted = !isNowUnmuted;
+    video.muted = !wasMuted;
     volumeIcon.classList.toggle("fa-volume-mute", !video.muted);
     volumeIcon.classList.toggle("fa-volume-up", video.muted);
 
     // Update overlay text
-    overlayText.textContent = video.muted
-      ? "Ready to hear magic?"
-      : "You've been fulfilled?";
+    if (overlayText) {
+      overlayText.textContent = video.muted
+        ? "Ready to hear magic?"
+        : "You've been fulfilled?";
+    }
+
+    // If user unmuted, hide overlay and remove blur so media is visible
+    if (!video.muted) {
+      if (overlay) {
+        overlay.style.opacity = "0";
+        overlay.style.pointerEvents = "none";
+      }
+      wrapper.classList.add("no-blur");
+    } else {
+      // when muted again, remove no-blur so hover blur can apply
+      wrapper.classList.remove("no-blur");
+    }
   });
 
   // Fullscreen logic and blur removal
