@@ -378,6 +378,38 @@ document.addEventListener("DOMContentLoaded", function () {
     observer.observe(row);
   });
 });
+// Fallback: if user scrolls before page finishes loading the IntersectionObserver
+// callback may miss elements — ensure rows are revealed on load/scroll as well.
+function revealCheckerRows() {
+  const rows = document.querySelectorAll(".checker-row");
+  const viewportHeight =
+    window.innerHeight || document.documentElement.clientHeight;
+  rows.forEach((row) => {
+    if (row.classList.contains("fade-in-up")) return; // already visible
+    const rect = row.getBoundingClientRect();
+    // If any part of the row is within 90% of the viewport height, show it
+    if (rect.top < viewportHeight * 0.9 && rect.bottom > 0) {
+      row.classList.add("fade-in-up");
+    }
+  });
+}
+
+// light throttle to avoid running on every scroll event
+function throttle(fn, wait) {
+  let last = 0;
+  return function (...args) {
+    const now = Date.now();
+    if (now - last >= wait) {
+      last = now;
+      fn.apply(this, args);
+    }
+  };
+}
+
+window.addEventListener("load", revealCheckerRows);
+window.addEventListener("scroll", throttle(revealCheckerRows, 120), {
+  passive: true,
+});
 //Hover effect for video
 const wrappers = document.querySelectorAll(".video-wrapper");
 
